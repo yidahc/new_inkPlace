@@ -16,14 +16,6 @@ exports.getStyles = (req, res) => {
     .catch(err => { console.log(err)})
 }
 
-//Qyuery dB for Images of the Style
-exports.getInfoByStyle = (req, res) => {
-  db.getInfoByStyle()
-    .then(data => {
-      res.status(200).send(data)
-    })
-    .catch(err => { console.log(err)})
-}
 
 exports.imagesByStyle = (req, res) => {
   db.imagesByStyle()

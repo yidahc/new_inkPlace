@@ -15,7 +15,7 @@ const connection = mysql.createConnection(config);
 //Example mysql query using Promises
 const getStyles = cb => {
   return new Promise ((resolve, reject) => {
-    connection.query("SELECT style FROM styles", (err, results) => {
+    connection.query("SELECT * FROM styles", (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -26,16 +26,6 @@ const getStyles = cb => {
 
 
 
-const getInfoByStyle = cb => {
-  return new Promise ((resolve, reject) => {
-    connection.query("SELECT info FROM styles", (err, results) => {
-      if (err) {
-        return reject(err);
-      }
-      return resolve(results);
-    })
-  });
-};
 
 
 const imagesByStyle = cb => {

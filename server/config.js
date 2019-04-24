@@ -14,8 +14,6 @@ app.use(express.static(__dirname + "/../client/dist"));
 //HTTP Requests go here
 app.get("/home", route.getStyles)
 
-app.get("/home-info", route.getInfoByStyle)
-
 app.get("/home-images", route.imagesByStyle)
 
 app.post("/book", route.getApp)
