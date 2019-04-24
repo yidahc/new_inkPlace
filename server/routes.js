@@ -9,14 +9,14 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 
 
-app.get ('/home',function (req, res) =>{
+app.get ('/home',(req, res) =>{
   db.getStyles(data => {
     res.status(200).send(data)
   })
 });
 
-app.get  ('/style', function (req,res) => {
-  Promise.all([
+app.get  ('/style', (req,res) => {
+  app.all([
     db.getInfoByStyle(),
     db.imagesByStyle()
   ])
@@ -28,13 +28,13 @@ app.get  ('/style', function (req,res) => {
     })
 })
 
-app.post ('/login',function (req, res) => {
+app.post ('/login',(req, res) => {
   db.getUser(data => {
     res.status(200).send(data)
   })
 });
 
-app.post ('/login',function (req, res) => {
+app.post ('/login',(req, res) => {
   db.getApp(data => {
     res.status(200).send(data)
   })
