@@ -1,12 +1,12 @@
 // If using MySQL, install mysql2 package with npm install -S mysql2
 //mysql2 npm package has support for Promises
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 //change database credentials as needed
 const config = {
   host: 'localhost',
-  user: 'root',
-  password: 'holacode',
+  user: 'holacode',
+  password: 'Holacode',
   database: 'inkPlace',
 };
 
@@ -66,6 +66,7 @@ const getApp = cb => {
 
 module.exports = {
 getStyles,
+imagesByStyle ,
 getUser,
 getApp
 };
