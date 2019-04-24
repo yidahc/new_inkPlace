@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const config = {
   host: 'localhost',
   user: 'root',
-  password: 'Holacode',
+  password: 'holacode',
   database: 'inkPlace',
 };
 
@@ -66,8 +66,6 @@ const getApp = cb => {
 
 module.exports = {
 getStyles,
-getInfoByStyle,
-imagesByStyle ,
 getUser,
 getApp
 };

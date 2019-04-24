@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const compression = require('compression');
-const route = require('server/routes.js')
+const route = require('../server/routes.js')
 const db = require('../database/mysql.js')
 const app = express();
 

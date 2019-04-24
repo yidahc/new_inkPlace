@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './Components/Home.jsx'
 import Book from './Components/Book.jsx'
-import Styles from './Components/Styles.jsx'
+//import Styles from './Components/Styles.jsx'
 import Navigation from './Components/Navigation.jsx'
 
 
