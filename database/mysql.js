@@ -14,15 +14,17 @@ const connection = mysql.createConnection(config);
 
 //Example mysql query using Promises
 const getStyles = cb => {
-  connection.query("SELECT style FROM styles",
-    (err, results,fields) => {
-      if(err){
-        throw err;
-      }else{
-        cb(results)
+  return new Promise ((resolve, reject) => {
+    connection.query("SELECT style FROM styles", (err, results) => {
+      if (err) {
+        return reject(err);
       }
-    });
+      return resolve(results);
+    })
+  });
 };
+
+
 
 const getInfoByStyle = cb => {
   return new Promise ((resolve, reject) => {
@@ -48,26 +50,29 @@ const imagesByStyle = cb => {
 };
 
 const getUser = cb => {
-  connection.query("INSERT INTO users (email,name) VAlUES ? ",
-    (err, results,fields) => {
-      if(err){
-        throw err;
-      }else{
-        cb(results)
+  return new Promise ((resolve, reject) => {
+    connection.query("INSERT INTO users (email,name) VAlUES (?,?)  ", (err, results) => {
+      if (err) {
+        return reject(err);
       }
-    });
+      return resolve(results);
+    })
+  });
 };
 
+
 const getApp = cb => {
-  connection.query("INSERT INTO appointments (size, bodypart, apptDate) VAlUES ? ",
-    (err, results,fields) => {
-      if(err){
-        throw err;
-      }else{
-        cb(results)
+  return new Promise ((resolve, reject) => {
+    connection.query("INSERT INTO appointments (size, bodypart, apptDate) VAlUES(?,?)", (err, results) => {
+      if (err) {
+        return reject(err);
       }
-    });
+      return resolve(results);
+    })
+  });
 };
+
+
 
 module.exports = {
 getStyles,
