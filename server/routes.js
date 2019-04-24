@@ -25,6 +25,14 @@ exports.getInfoByStyle = (req, res) => {
     .catch(err => { console.log(err)})
 }
 
+exports.imagesByStyle = (req, res) => {
+  db.imagesByStyle()
+    .then(data => {
+      res.status(200).send(data)
+    })
+    .catch(err => { console.log(err)})
+}
+
 exports.getUser = (req, res) => {
   db.getUser()
     .then(data => {
