@@ -66,7 +66,6 @@ const getApp = cb => {
 
 module.exports = {
 getStyles,
-getInfoByStyle,
 imagesByStyle ,
 getUser,
 getApp
