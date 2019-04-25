@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './Components/Home.jsx'
 import Book from './Components/Book.jsx'
-import Styles from './Components/Styles.jsx'
 import Navigation from './Components/Navigation.jsx'
 
 
@@ -16,7 +15,6 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/book" component={Book} />
-              <Route path="/info" component={Styles} />
             </Switch>
         </div>
       </BrowserRouter>
