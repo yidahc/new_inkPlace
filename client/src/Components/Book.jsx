@@ -5,19 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css'
    return (
    <div>
     <form>
-   <div class="form-group margin-right-5 col-md-4">
-     <label for="exampleFormControlInput1">Email address</label>
-     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+   <div className="form-group margin-right-5 col-md-4">
+     <label htmlFor="emailInput">Email address</label>
+     <input type="email" className="form-control" id="email" placeholder="name@example.com">
      </input>
    </div>
-   <div class="form-group margin-right-5 col-md-4">
-     <label for="exampleFormControlTextarea1">Where you want your Tattoo?</label>
-     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+   <div className="form-group margin-right-5 col-md-4">
+     <label htmlFor="bodypart">Where you want your Tattoo?</label>
+     <textarea className="form-control" id="bodyPart" rows="3"></textarea>
    </div>
 
-   <div class="form-group margin-right-5 col-md-3">
-    <label for="exampleFormControlSelect1">Whats the size?</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+   <div className="form-group margin-right-5 col-md-3">
+    <label htmlFor="size">Whats the size?</label>
+    <select className="form-control" id="size">
       <option>Small</option>
       <option>Medium</option>
       <option>Big</option>
@@ -25,9 +25,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
     </select>
   </div>
 
-   <div class="form-group margin-right-5 col-md-4">
-     <label for="exampleFormControlTextarea1">Any extra Comments ? </label>
-     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+   <div className="form-group margin-right-5 col-md-4">
+     <label htmlFor="comments">Any extra Comments ? </label>
+     <textarea className="form-control" id="comment" rows="3"></textarea>
    </div>
 
 
