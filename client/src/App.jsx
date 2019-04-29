@@ -6,29 +6,48 @@ import Book from './Components/Book.jsx'
 import Navigation from './Components/Navigation.jsx'
 import axios from 'axios';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
         styles : [],
-        style: {}
+        style: {},
+        images:[],
+        image :{}
 
     };
     this.selectStyles = this.selectStyles.bind(this)
+    this.selectImages = this.selectImages.bind(this)
   }
 
   componentDidMount(){
-   axios.get('/home')
-   .then(res => {
-     console.log("this is my res:", res.data)
-     this.setState({
-       styles : res.data,
-       })
+    axios.get('/home')
+    .then(res => {
+      console.log("this is my res:", res.data)
+      this.setState({
+        styles : res.data,
+        })
 
-   })
-   .catch(err => {
-     console.log("this is my err:", err);
-   })
+    })
+    .catch(err => {
+      console.log("this is my err:", err);
+    });
+
+    axios.get('/home-images')
+    .then(res => {
+      console.log("this is my res:", res.data)
+      this.setState({
+        images : res.data,
+        })
+
+    })
+    .catch(err => {
+      console.log("this is my err:", err);
+    })
+
+
+
  }
 
  selectStyles(id) {
@@ -41,12 +60,24 @@ class App extends Component {
     })
  }
 
+ selectImages(id) {
+     const { images } = this.state;
+     console.log(typeof images[0].id)
+     console.log(typeof id)
+     const image = images.filter(image => +id === image.id);
+     this.setState({
+       image: image[0]
+    })
+ }
+
   render() {
     return (
 
       <BrowserRouter>
-        <div>
+        <div >
           <Navigation />
+
+
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}/>} />
               <Route path="/book" component={Book} />
