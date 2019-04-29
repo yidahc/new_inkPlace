@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // RHL only for front end development
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './Components/Home.jsx'
-import Book from './Components/Book.jsx'
+import Book from './Components/Book.js'
 import Navigation from './Components/Navigation.jsx'
 import axios from 'axios';
 
