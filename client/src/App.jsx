@@ -13,12 +13,11 @@ class App extends Component {
       this.state = {
         styles : [],
         style: {},
-        images:[],
-        image :{}
+        
 
     };
     this.selectStyles = this.selectStyles.bind(this)
-    this.selectImages = this.selectImages.bind(this)
+   
   }
 
   componentDidMount(){
@@ -60,15 +59,7 @@ class App extends Component {
     })
  }
 
- selectImages(id) {
-     const { images } = this.state;
-     console.log(typeof images[0].id)
-     console.log(typeof id)
-     const image = images.filter(image => +id === image.id);
-     this.setState({
-       image: image[0]
-    })
- }
+
 
   render() {
     return (
