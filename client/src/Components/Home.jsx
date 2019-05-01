@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
-import DemoCarousel from './DemoCarousel.jsx';
+import Carousel from './Carousel.jsx';
 import './home.css'
 
 const Home = (props) => (
@@ -21,7 +21,7 @@ const Home = (props) => (
     <p>{props.style.info}</p>
   </div>
   <center><div className='slideshow'>
-   <DemoCarousel />
+   <Carousel />
   </div></center>
   </div>
 
