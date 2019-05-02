@@ -33,6 +33,9 @@ export class MapContainer extends Component {
         google={this.props.google}
       >
         <Marker onClick={this.onMarkerClick} name={'current location'} />
+        <Marker
+    						name={'puebla'}
+   						 	position={{lat: 19.033333, lng: -98.183334}} />
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
