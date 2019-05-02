@@ -17,6 +17,7 @@
     "dev": "webpack --config webpack.config.js --mode development --watch"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
