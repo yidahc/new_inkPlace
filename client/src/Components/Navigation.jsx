@@ -1,16 +1,21 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button } from 'reactstrap';
 
 const Navigation = () => {
   return  (
-    <div>
-      <div className="text-left">
-      <NavLink to="/"><button type="button" className="btn btn-info">Home</button></NavLink>
+    <div className="bg-info clearfix">
+      <div className="btn  float-left">
+      <NavLink to="/"><Button color="danger" >Home</Button></NavLink>
       </div>
-      <div className="text-center">
-      <NavLink to="/book"><button type="button" className="btn btn-info">Book</button></NavLink>
+      <div  className="btn float-right">
+        <NavLink to="/login"><Button color="danger">Login</Button></NavLink>
       </div>
+      <div className="btn float-right">
+      <NavLink to="/map"><Button color="danger">Map</Button></NavLink>
+      </div>  
+      
     </div>
 
   );
