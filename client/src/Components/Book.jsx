@@ -31,12 +31,12 @@ class Book extends Component{
     this.setState({[e.target.name]: e.target.value })
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault()
 
     const { name, email, message } = this.state
 
-    const from = axios.post('/api/form', {
+    const from = await axios.post('/api/form', {
       name,
       email,
       message
@@ -55,7 +55,7 @@ class Book extends Component{
 
         <FormGroup>
           <Label for='email'>Email:</Label>
-          <input
+          <Input
             type='email'
             name='email'
             onChange={this.handleChange} />
@@ -63,7 +63,7 @@ class Book extends Component{
          
         <Dropdown isOpen={isOpen} toggle={toggle}>
   <DropdownToggle>
-    Dropdown
+    Body Part
   </DropdownToggle>
   <DropdownMenu
     modifiers={{
@@ -83,22 +83,18 @@ class Book extends Component{
       },
     }}
   >
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
-    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Right Arm</DropdownItem>
+    <DropdownItem>Left Arm</DropdownItem>
+    <DropdownItem>Right Leg</DropdownItem>
+    <DropdownItem>Left Leg</DropdownItem>
+    <DropdownItem>Neck</DropdownItem>
+    <DropdownItem>Body</DropdownItem>
   </DropdownMenu>
 </Dropdown>
 
         <FormGroup>
           <Label for='message'>Message:</Label>
-          <input
+          <Input
             type='textarea'
             name='message'
             onChange={this.handleChange} />
