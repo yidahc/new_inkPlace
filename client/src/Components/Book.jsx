@@ -3,7 +3,7 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-
+require("babel-polyfill");
 
 class Book extends Component{
   constructor (){
@@ -13,11 +13,11 @@ class Book extends Component{
       name: '',
       email: '',
       message: '',
-      dropdownOpen: false
+      dropdownOpen: false,
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.toggle = this.toggle.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   toggle() {
@@ -47,8 +47,8 @@ class Book extends Component{
       <Form onSubmit={this.handleSubmit} style={{ width: '600px'}}>
         <FormGroup>
           <Label for='name'>Name:</Label>
-          <input
-            type='text'
+          <Input
+            type='name'
             name='name'
             onChange={this.handleChange} />
         </FormGroup>
@@ -61,7 +61,7 @@ class Book extends Component{
             onChange={this.handleChange} />
         </FormGroup>
          
-        <Dropdown isOpen={isOpen} toggle={toggle}>
+        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
   <DropdownToggle>
     Body Part
   </DropdownToggle>

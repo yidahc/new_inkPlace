@@ -6,6 +6,7 @@ const db = require('../database/mysql.js')
 const app = express();
 const nodemailer = require('nodemailer')
 const path = require('path')
+
 //middleware
 app.use(compression());
 app.use(bodyParser.json());
