@@ -76,19 +76,34 @@ class Book extends Component{
             styles: {
               ...data.styles,
               overflow: 'auto',
-              maxHeight: 100,
+              maxHeight: 300,
             },
           };
         },
       },
     }}
   >
-    <DropdownItem>Right Arm</DropdownItem>
-    <DropdownItem>Left Arm</DropdownItem>
-    <DropdownItem>Right Leg</DropdownItem>
-    <DropdownItem>Left Leg</DropdownItem>
-    <DropdownItem>Neck</DropdownItem>
-    <DropdownItem>Body</DropdownItem>
+
+    <DropdownItem>---</DropdownItem>
+    <DropdownItem>Calf</DropdownItem>
+    <DropdownItem>Chest</DropdownItem>
+    <DropdownItem>Foot</DropdownItem>
+    <DropdownItem>Fore Arm</DropdownItem>
+    <DropdownItem>Full Back</DropdownItem>
+    <DropdownItem>Full Sleeve</DropdownItem>
+    <DropdownItem>Half Sleeve</DropdownItem>
+    <DropdownItem>Leg</DropdownItem>
+    <DropdownItem>Lower Back</DropdownItem>
+    <DropdownItem>Ribs</DropdownItem>
+    <DropdownItem>Stomach</DropdownItem>
+    <DropdownItem>Upper Arm</DropdownItem>
+    <DropdownItem>Upper Back</DropdownItem>
+    <DropdownItem>Lower Arm</DropdownItem>
+    <DropdownItem>Hip</DropdownItem>
+    <DropdownItem>Wrist</DropdownItem>
+    <DropdownItem>Ankle</DropdownItem>
+    <DropdownItem>Other</DropdownItem>
+    
   </DropdownMenu>
 </Dropdown>
 
@@ -108,60 +123,3 @@ class Book extends Component{
 export default Book;
 
 
-
-
-
-
-/*
-
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-
- const Book = () => {
-   return (
-   <div>
-    <form>
-   <div className="form-group margin-right-5 col-md-4">
-     <label htmlFor="emailInput">Email address</label>
-     <input
-       type="email"
-       className="form-control"
-       id="email"
-       placeholder="name@example.com">
-       </input>
-   </div>
-   <div className="form-group margin-right-5 col-md-4">
-     <label htmlFor="bodypart">Where you want your Tattoo?</label>
-     <textarea
-       className="form-control"
-       id="bodyPart"
-       rows="3"></textarea>
-   </div>
-
-   <div className="form-group margin-right-5 col-md-3">
-    <label htmlFor="size">Whats the size?</label>
-    <select
-      className="form-control"
-      id="size">
-      <option>Small</option>
-      <option>Medium</option>
-      <option>Big</option>
-
-    </select>
-  </div>
-
-   <div className="form-group margin-right-5 col-md-4">
-     <label htmlFor="comments">Any extra Comments ? </label>
-     <textarea
-       className="form-control"
-       id="comment"
-       rows="3"></textarea>
-   </div>
-
- </form>
-
-  </div>)
-
-};
- export default Book;
-*/
