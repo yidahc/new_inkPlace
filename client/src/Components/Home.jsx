@@ -13,13 +13,16 @@ const Home = (props) => (
         
   </div>
 
-
   <div>
     <p>{props.style.info}</p>
   </div>
-  <center><div className='slideshow'>
+
+  <center>
+    <div className='slideshow'>
    <Carousel />
-  </div></center>
+  </div>
+  </center>
+  
   </div>
 
 );

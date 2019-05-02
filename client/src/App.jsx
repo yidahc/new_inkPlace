@@ -5,6 +5,7 @@ import Home from './Components/Home.jsx'
 import Book from './Components/Book.jsx'
 import Navigation from './Components/Navigation.jsx'
 import axios from 'axios';
+import { MapContainer } from './Components/Map.jsx';
 
 
 class App extends Component {
@@ -72,6 +73,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}/>} />
               <Route path="/book" component={Book} />
+              <Router path="/map" component={MapContainer}/>           
             </Switch>
         </div>
       </BrowserRouter>
