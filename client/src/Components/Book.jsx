@@ -99,6 +99,7 @@ class Book extends Component{
             name='message'
             onChange={this.handleChange} />
         </FormGroup>
+        <Button>SUBMIT</Button>
       </Form>
     );
   }
