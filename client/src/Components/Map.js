@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import Book from './Book.jsx'
 const mapStyles = {
   map: {
     position: 'absolute',
     width: '50%',
-    height: '100%'
+    height: '100%',
+    right: '0%'
   }
 };
 
@@ -111,6 +112,9 @@ export class CurrentLocation extends React.Component {
              Loading map...
            </div>
            {this.renderChildren()}
+           <div>
+             <Book/>
+           </div>  
          </div>
        );
      }

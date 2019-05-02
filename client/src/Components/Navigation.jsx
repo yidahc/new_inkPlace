@@ -5,13 +5,17 @@ import { Button } from 'reactstrap';
 
 const Navigation = () => {
   return  (
-    <div class="bg-info clearfix">
-      <div class="btn  float-right">
+    <div className="bg-info clearfix">
+      <div className="btn  float-left">
       <NavLink to="/"><Button color="danger" >Home</Button></NavLink>
       </div>
-      <div class="btn float-right" >
-      <NavLink to="/book"><Button color="danger">Booking</Button></NavLink>
+      <div  className="btn float-right">
+        <NavLink to="/login"><Button color="danger">Login</Button></NavLink>
       </div>
+      <div className="btn float-right">
+      <NavLink to="/map"><Button color="danger">Map</Button></NavLink>
+      </div>  
+      
     </div>
 
   );
