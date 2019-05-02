@@ -5,15 +5,15 @@ import { Button } from 'reactstrap';
 
 const Navigation = () => {
   return  (
-    <div>
-      <div className="text-left">
-      <NavLink to="/"><Button outline color="success">Home</Button>{' '}</NavLink>
+    <div class="bg-info clearfix">
+      <div class="btn  float-left">
+      <NavLink to="/"><Button color="danger" >Home</Button></NavLink>
       </div>
-      <div className="text-center">
-      <NavLink to="/book"><Button outline color="success">Booking</Button>{' '}</NavLink>
+      <div class="btn float-right" >
+      <NavLink to="/book"><Button color="danger">Booking</Button></NavLink>
       </div>
-      <div>
-      <NavLink to="/map"><Button outline color="success">Map</Button>{' '}</NavLink>
+      <div class="btn float-right">
+      <NavLink to="/map"><Button color="danger">Maps</Button></NavLink>
       </div>
     </div>
 
