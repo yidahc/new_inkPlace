@@ -7,7 +7,7 @@ import ApiCalendar from 'react-google-calendar-api';
         this.handleItemClick = this.handleItemClick.bind(this);
       }
       
-      public handleItemClick(event: SyntheticEvent<any>, name: string): void {
+       public handleItemClick(event: SyntheticEvent<any>, name: string): void {
         if (name === 'sign-in') {
           ApiCalendar.handleAuthClick();
         } else if (name === 'sign-out') {
@@ -15,7 +15,7 @@ import ApiCalendar from 'react-google-calendar-api';
         }
       }
  
-      render(): ReactNode {
+      render() {
         return (
               <button
                   onClick={(e) => this.handleItemClick(e, 'sign-in')}
