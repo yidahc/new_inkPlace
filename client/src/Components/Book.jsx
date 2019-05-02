@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap'
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 
 class Book extends Component{
   constructor (){
@@ -10,12 +12,20 @@ class Book extends Component{
     this.state = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      dropdownOpen: false
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+  
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
+
 
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value })
@@ -50,6 +60,41 @@ class Book extends Component{
             name='email'
             onChange={this.handleChange} />
         </FormGroup>
+         
+        <Dropdown isOpen={isOpen} toggle={toggle}>
+  <DropdownToggle>
+    Dropdown
+  </DropdownToggle>
+  <DropdownMenu
+    modifiers={{
+      setMaxHeight: {
+        enabled: true,
+        order: 890,
+        fn: (data) => {
+          return {
+            ...data,
+            styles: {
+              ...data.styles,
+              overflow: 'auto',
+              maxHeight: 100,
+            },
+          };
+        },
+      },
+    }}
+  >
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>
 
         <FormGroup>
           <Label for='message'>Message:</Label>
