@@ -6,7 +6,7 @@ import { Button } from 'reactstrap';
 const Navigation = () => {
   return  (
     <div class="bg-info clearfix">
-      <div class="btn  float-left">
+      <div class="btn  float-right">
       <NavLink to="/"><Button color="danger" >Home</Button></NavLink>
       </div>
       <div class="btn float-right" >
