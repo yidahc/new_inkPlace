@@ -72,7 +72,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}/>} />
               <Route path="/book" component={Book} />
-              <Route path="/map" component={MapContainer}></Route>            
+              <Route path="/map" component={MapContainer }></Route>            
             </Switch>
         </div>
       </BrowserRouter>

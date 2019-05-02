@@ -12,9 +12,6 @@ const Navigation = () => {
       <div class="btn float-right" >
       <NavLink to="/book"><Button color="danger">Booking</Button></NavLink>
       </div>
-      <div class="btn float-right">
-      <NavLink to="/map"><Button color="danger">Maps</Button></NavLink>
-      </div>
     </div>
 
   );
