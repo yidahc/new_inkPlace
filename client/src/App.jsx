@@ -24,9 +24,8 @@ class App extends Component {
       
           <Navigation />
 
-
+           {/*data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}*/}
             <Switch>
-
               <Route exact path="/" component={Home}/>
               <Route path="/map" component={MapContainer }></Route>
               <Route path="/login" ></Route>          
