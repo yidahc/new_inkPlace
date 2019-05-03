@@ -10,7 +10,10 @@ import axios from 'axios';
 class App extends Component {
   constructor(props) {
     super(props);
-    
+    this.state = {
+      isLoginOpen: true,
+      isRegisterOpen: false
+    };
   }
 
   render() {
@@ -18,12 +21,14 @@ class App extends Component {
 
       <BrowserRouter>
         <div >
+      
           <Navigation />
 
 
             <Switch>
-              <Route exact path="/" render={(props) => <Home {...props} />
-            } />
+              <Route exact path="/" component={Home}
+              />
+             
               <Route path="/book" component={Book} />
             </Switch>
         </div>
