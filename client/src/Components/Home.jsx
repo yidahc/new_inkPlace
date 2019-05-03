@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import LoginBox from './Components/LoginBox.jsx';
-import Register from './Components/Register.jsx';
+import LoginBox from './LoginBox.jsx';
+import Register from './Register.jsx';
 export default class Home extends React.Component {
     constructor(props){
         super(props);
@@ -16,7 +16,7 @@ export default class Home extends React.Component {
         
           <div className="box-controller">
           <div className="controller">
-            <Login/>
+            <LoginBox/>
           </div>
           <div className="controller">
             <Register/>
