@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import LoginBox from './LoginBox.jsx';
 import Register from './Register.jsx';
-export default class Home extends React.Component {
 
 class Home extends React.Component {
 
