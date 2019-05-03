@@ -3,11 +3,17 @@ import ReactDom from 'react-dom';
 import LoginBox from './LoginBox.jsx';
 import Register from './Register.jsx';
 export default class Home extends React.Component {
+
+class Home extends React.Component {
+
     constructor(props){
         super(props);
         this.state = {};
     }
     submitLogin(e) {
+        
+    }
+    submitRegister(e) {
         
     }
     render(){
@@ -18,18 +24,16 @@ export default class Home extends React.Component {
           <div className="controller">
             <LoginBox/>
           </div>
+       
           <div className="controller">
-            <Register/>
+            <Register />
           </div>
           </div>
           <div className="box-container">
-          
           </div>
           </div>
         )}
     }
 
+export default Home;
 
-
-
-     

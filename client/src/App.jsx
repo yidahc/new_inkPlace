@@ -10,7 +10,10 @@ import MapContainer from './Components/MapContainer.jsx'
 class App extends Component {
   constructor(props) {
     super(props);
-    
+    this.state = {
+      isLoginOpen: true,
+      isRegisterOpen: false
+    };
   }
 
   render() {
@@ -18,14 +21,15 @@ class App extends Component {
 
       <BrowserRouter>
         <div >
+      
           <Navigation />
 
            {/*data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}*/}
             <Switch>
-           
-              <Route exact path="/" component={ Home }/>} />
-              <Route path="/map" component={ MapContainer }></Route>
+              <Route exact path="/" component={Home}/>
+              <Route path="/map" component={MapContainer }></Route>
               <Route path="/login" ></Route>          
+        
             </Switch>
         </div>
         
