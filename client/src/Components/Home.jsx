@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
+import LoginBox from './Components/LoginBox.jsx';
+import Register from './Components/Register.jsx';
 export default class Home extends React.Component {
     constructor(props){
         super(props);
