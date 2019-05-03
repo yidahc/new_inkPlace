@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 
-
-
-
-class Register extends  React.Component {
+export default class Register extends  React.Component {
     constructor(props) {
       super(props);
       this.state = {};
@@ -12,7 +9,7 @@ class Register extends  React.Component {
     submitRegister(e) {
       
     }
-    
+
     render() {
       return(
         <div className="inner-container">
@@ -37,4 +34,4 @@ class Register extends  React.Component {
     }
   }
 
-export default Home;
+
