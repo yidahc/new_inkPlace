@@ -20,10 +20,11 @@ class App extends Component {
         <div >
           <Navigation />
 
-
+           {/*data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}*/}
             <Switch>
-              <Route exact path="/" render={(props) => <Home {...props} data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}/>} />
-              <Route path="/map" component={MapContainer }></Route>
+           
+              <Route exact path="/" component={ Home }/>} />
+              <Route path="/map" component={ MapContainer }></Route>
               <Route path="/login" ></Route>          
             </Switch>
         </div>
