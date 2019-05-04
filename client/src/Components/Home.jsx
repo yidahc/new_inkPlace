@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import LoginBox from './LoginBox.jsx';
 import Register from './Register.jsx';
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b7c28b5f8436001d5401cc6c8418fbe1d2eef
 
 class Home extends React.Component {
 
@@ -24,7 +27,10 @@ class Home extends React.Component {
           <div className="controller">
             <LoginBox/>
           </div>
+<<<<<<< HEAD
                  
+=======
+>>>>>>> d22b7c28b5f8436001d5401cc6c8418fbe1d2eef
           <div className="controller">
             <Register />
           </div>
