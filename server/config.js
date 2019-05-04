@@ -42,20 +42,22 @@ app.post('/api/form', (req, res) => {
     <h3>Comments</h3>
     <p>${req.body.message}</p>
     <h3>Tattoo location</h3>
-    <p>${req.body.location}</p>
+    <p>${req.body.bodyPart}</p>
+    <h3>Date of Appointment</h3>
+    <p>${req.body.date}</p>
       `
     let transporter = nodemailer.createTransport({
       host: 'smtp.ethereal.email',
       port:587,
       auth: {
-        user: 'chasity.erdman@ethereal.email',
-        pass: 'WzbXbWr8Yg1xuFckup'
+        user: '	monica.hudson89@ethereal.email',//change this email
+        pass: 'KmCmxq41pwa78k9KgY'//change password
       }
     })
     
     let mailOptions = {
       from: 'test@testaccount.com',
-      to: 'chasity.erdman@ethereal.email',
+      to: '	monica.hudson89@ethereal.email',//use same email
       replyTo: 'test@testaccount.com',
       subject: 'New Message',
       text: req.body.message,
