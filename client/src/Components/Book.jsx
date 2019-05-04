@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
+import ReactCalendar from './ReactCalendar.jsx'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 require("babel-polyfill");
 
@@ -106,7 +107,7 @@ class Book extends Component{
     
   </DropdownMenu>
 </Dropdown>
-
+<ReactCalendar />
         <FormGroup>
           <Label for='message'>Message:</Label>
           <Input
