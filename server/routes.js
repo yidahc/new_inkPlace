@@ -6,7 +6,6 @@ var db = require('../database/mysql.js');
 var app = express();
 // UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
-
 //Query dB for StylesDropdown
 exports.getStyles = (req, res) => {
   db.getStyles()
