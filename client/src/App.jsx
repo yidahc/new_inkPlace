@@ -30,14 +30,9 @@ class App extends Component {
 
            {/*data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}*/}
             <Switch>
-<<<<<<< HEAD
-              <Route exact path="/" render={(props) => <Home {...props} />} />
-=======
               <Route exact path="/" component={Home}/>
->>>>>>> master
               <Route path="/map" component={MapContainer }></Route>
               <Route path="/login" ></Route>          
-        
             </Switch>
         </div>
         
