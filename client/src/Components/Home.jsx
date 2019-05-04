@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import LoginBox from './LoginBox.jsx';
 import Register from './Register.jsx';
-import Login from './Login.jsx';
+import Example from './Carousel.jsx';
 
 class Home extends React.Component {
 
@@ -11,32 +11,27 @@ class Home extends React.Component {
         this.state = {};
     }
     submitLogin(e) {
-        
+
     }
     submitRegister(e) {
-        
+
     }
     render(){
         return (
-          <div className="root-container"> 
-        
+          <div className="root-container">
           <div className="box-controller">
           <div className="controller">
             <LoginBox/>
           </div>
-          <div>
-          <Login/>
-          </div>
-       
           <div className="controller">
             <Register />
           </div>
           </div>
           <div className="box-container">
           </div>
+          <Example />
           </div>
         )}
     }
 
 export default Home;
-
