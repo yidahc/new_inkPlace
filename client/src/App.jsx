@@ -1,3 +1,7 @@
+/*
+import React from 'react'
+import moment from 'moment'
+*/
 import React, { Component } from 'react';
 // RHL only for front end development
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
@@ -29,7 +33,6 @@ class App extends Component {
               <Route exact path="/" component={Home}/>
               <Route path="/map" component={MapContainer }></Route>
               <Route path="/login" ></Route>          
-        
             </Switch>
         </div>
         
