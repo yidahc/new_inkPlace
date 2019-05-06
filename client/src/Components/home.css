@@ -1,4 +1,3 @@
-.slideshow{
-  width: 20%;
-  height: 60%;
+.root-container {
+  position: relative;
 }
