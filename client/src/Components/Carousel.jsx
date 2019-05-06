@@ -88,6 +88,7 @@ class Example extends Component {
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.src}
+          className='item'
         >
           <img src={item.src} />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
@@ -107,6 +108,8 @@ class Example extends Component {
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
+        className='carousel'
+        
       >
       
       <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
