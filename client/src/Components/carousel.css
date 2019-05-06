@@ -1,0 +1,7 @@
+.carousel-img-width {
+    width: 50%;
+    height: 10%;
+    position: absolute;
+    right: -30%;
+    top: 100%
+  }

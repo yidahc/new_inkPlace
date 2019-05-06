@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import './carousel.css'
 import '../App.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import Image1 from '../../dist/images/slide1.jpg';
 import Image2 from '../../dist/images/slide2.jpg';
 import Image3 from '../../dist/images/slide3.jpg';
@@ -89,7 +90,7 @@ class Example extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} />
+          <img src={item.src} class="carousel-image-width" />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
@@ -99,7 +100,8 @@ class Example extends Component {
       <div className='parentComponent'>
       <div className='Title' >
         <p>
-        <a>Ink Me</a>  
+        <a>Ink Me</a>
+        <h6>Find your nearest local tattoo shop that fits your style</h6>  
         </p>    
       </div> 
       <div>
@@ -107,7 +109,7 @@ class Example extends Component {
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
-        
+        className='carousel-img-width'
       >
       
       <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
