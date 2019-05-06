@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-datepicker';
 
 class ReactCalendar extends Component {
   state = {
@@ -14,6 +14,8 @@ class ReactCalendar extends Component {
         <DatePicker
           onChange={this.onChange}
           value={this.state.date}
+          excludeDates={[new Date(), addDays(new Date(), 3)]}
+          placeholderText="Choose date for appointment"
         />
       </div>
     );
