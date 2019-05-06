@@ -91,7 +91,7 @@ class Example extends Component {
           key={item.src}
           className='item'
         >
-          <img src={item.src} class="carousel-image-width" />
+          <img src={item.src} class="carousel" />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
