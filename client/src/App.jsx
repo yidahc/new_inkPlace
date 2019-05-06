@@ -11,6 +11,7 @@ import Navigation from './Components/Navigation.jsx'
 import axios from 'axios';
 import MapContainer from './Components/MapContainer.jsx'
 import Login from './Components/Login.jsx'
+import Styles from './Components/Styles.jsx'
 
 
 class App extends Component {
@@ -23,18 +24,18 @@ class App extends Component {
 
       <BrowserRouter>
         <div >
-      
+
           <Navigation />
 
            {/*data={this.state.styles} selectStyles={this.selectStyles} style={this.state.style}*/}
             <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/map" component={MapContainer }></Route>
+              <Route exact path="/" component={Home} />
+              <Route path="/map" component={MapContainer} ></Route>
               <Route path="/login"  component={Login} ></Route>
-              <Route path ="/styles" /*component={}*/></Route>          
+              <Route path ="/styles" component={Styles} ></Route>
             </Switch>
         </div>
-        
+
       </BrowserRouter>
     )
   }
