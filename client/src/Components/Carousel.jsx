@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import '../App.css';
 import Image1 from '../../dist/images/slide1.jpg';
 import Image2 from '../../dist/images/slide2.jpg';
 import Image3 from '../../dist/images/slide3.jpg';
