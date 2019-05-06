@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
-import ReactCalendar from './ReactCalendar.jsx'
-import DatePicker from 'react-date-picker';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 require("babel-polyfill");
 
 class Book extends Component{
@@ -16,6 +16,7 @@ class Book extends Component{
       message: '',
       dropdownOpen: false,
       date: new Date(),
+      datesToInclude: [new Date(), new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)],
       bodyPart: 'Body Part',
     }
     this.toggle = this.toggle.bind(this);
@@ -48,14 +49,23 @@ class Book extends Component{
       bodyPart,
       message
     })
-}
+    
+
+  }
   render(){
     return(
       <Form onSubmit={this.handleSubmit} style={{ width: '600px'}}>
-        <DatePicker
-          onChange={this.onChange}
-          value={this.state.date}
-        />
+         <DatePicker 
+            placeholderText="Click to select a date" 
+            onChange={this.onChange}
+            selected={this.state.date}
+            includeDates={this.state.datesToInclude}
+            dateFormat="MMMM d, yyyy"
+         >
+          <div style={{color: 'green'}}>
+            <center>InkMe.co</center>
+          </div>
+        </DatePicker>
         <FormGroup>
           <Label for='name'>Name:</Label>
           <Input
