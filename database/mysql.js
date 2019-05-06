@@ -25,7 +25,7 @@ const getStyles = cb => {
 };
 
 
-const getDates = cb => {
+const getDays = cb => {
     connection.query("SELECT apptDate FROM appointments", (error, results) => {
       if (error) {
         throw error;
@@ -59,10 +59,11 @@ const getUser = cb => {
   });
 };
 
-
+/*
 const getApp = cb => {
   return new Promise ((resolve, reject) => {
-    connection.query("INSERT INTO appointments (size, bodypart, apptDate) VAlUES(?,?)", (err, results) => {
+    connection.query("INSERT INTO appointments (clientName, email, bodyPart, studio) VALUES ("Yidah", "waitingoutthewinter22012@yahoo.com", "Lower Arm", "studio onix");
+", (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -71,12 +72,11 @@ const getApp = cb => {
   });
 };
 
-
+*/
 
 module.exports = {
 getStyles,
 imagesByStyle ,
 getUser,
-getDates,
-getApp
+getDays,
 };

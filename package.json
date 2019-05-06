@@ -27,6 +27,7 @@
     "google-auth-library": "^0.12.0",
     "google-maps-react": "^2.0.2",
     "googleapis": "^39.2.0",
+    "jquery": "^3.4.1",
     "mdbreact": "^4.13.0",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",

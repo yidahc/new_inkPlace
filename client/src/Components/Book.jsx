@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import axios from 'axios'
+import axios from 'axios';
+import $ from 'jquery';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 require("babel-polyfill");
@@ -16,7 +17,7 @@ class Book extends Component{
       message: '',
       dropdownOpen: false,
       date: new Date(),
-      datesToExclude: [],
+      datesToExclude: [new Date(2019, 4, 9)],
      // new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)
       bodyPart: 'Body Part',
       studio: 'Studio',
@@ -25,12 +26,12 @@ class Book extends Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.getDays = this.getDays.bind(this);
+    this.getData = this.getData.bind(this);
     this.addDays = this.addDays.bind(this);
   }
 
   componentDidMount () {
-      this.getDays()
+      this.getData ("/days")
   }
   
   onChange = date => this.setState({ date })
@@ -41,21 +42,23 @@ class Book extends Component{
     }));
   }
 
-  getDays() {
-    axios.get('/days')
-    .then(res => {
-      console.log(res.data, "RES.DATA in axios get request");
-      let currentDays = this.state.datesToExclude;
-      currentDays.push(res.data)
-      this.setState({
-        datesToExclude: currentDays
-      });
-    })
-    .catch(err => {
-      console.log("this is my err:", err);
+  getData(url) {
+    $.ajax({
+      url: url,
+      method: 'GET',
+      success: (results => {
+        let currentDays = this.state.datesToExclude;
+        currentDays.push(results)
+        this.setState({
+          datesToExclude: currentDays
+        });
+        console.log(results)
+      }),
+      error: (xhr, err) => {
+        console.log('err', err);
+      }
     });
   }
-
   
     addDays (url= '', data= {}) {
     return fetch(url, {

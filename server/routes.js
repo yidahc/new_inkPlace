@@ -15,9 +15,9 @@ exports.getStyles = (req, res) => {
     .catch(err => { console.log(err)})
 }
 
-exports.getDates = (request, response) => {
+module.exports.getDates = (request, response) => {
+  console.log("FROM ROUTES!");
   db.getDays(data => {
-    console.log(data, "FROM ROUTES!");
     response
       .status(200)
       .send(data)
