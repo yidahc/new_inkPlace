@@ -41,7 +41,8 @@
     "react-router-dom": "^4.3.1",
     "react-select": "^2.4.3",
     "reactjs-dropdown-component": "^1.0.6",
-    "reactstrap": "^8.0.0"
+    "reactstrap": "^8.0.0",
+    "sass": "^1.20.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
