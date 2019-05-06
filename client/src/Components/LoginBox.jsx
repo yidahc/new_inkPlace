@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class LoginBox extends React.Component {
+ class LoginBox extends React.Component {
     constructor(props) {
       super(props);
       this.state = {  
@@ -9,7 +9,7 @@ export default class LoginBox extends React.Component {
       this.submitLogin =this.submitLogin.bind(this);
     }
     
-    submitLogin() {
+    submitLogin(e) {
 
     }
 
@@ -22,17 +22,27 @@ export default class LoginBox extends React.Component {
         <div className="box">
         <div className="input-group">
         <label htmlFor="userName"> username</label>
-        <input type="text" name="username" className="login-input" placeholder="username"/>
+        <input type="text" 
+        name="username" 
+        className="login-input"
+         placeholder="username"/>
         </div>
         
         <div className="input-group">
         <label htmlFor="password">password</label>
-        <input type="text" name="password" className="login-input" placeholder="password"/>
+        <input 
+        type="text" 
+        name="password" 
+        className="login-input" 
+        placeholder="Password"/>
         </div>
-        <button type="button" className="login-btn" onClick={this.submitLogin}>Login</button>
+        <button type="button" 
+        className="login-btn" 
+        onClick={this.submitLogin.bind(this)}>Login</button>
         </div>
 
         </div>
       )
     }
   }
+  export default LoginBox;
