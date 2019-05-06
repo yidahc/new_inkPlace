@@ -1,27 +1,31 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button } from 'reactstrap';
+import { Button, ButtonGroup } from 'reactstrap';
 
 const Navigation = () => {
   return  (
-    <div className="bg-info clearfix">
-      <div className="btn  float-left">
-        <NavLink to="/"><Button color="danger" >Home</Button></NavLink>
+    <div>
+    <div  className="btn float-right">
+        <NavLink to="/login"><Button color="blue">Login</Button></NavLink>
       </div>
-      <div  className="btn float-right">
-        <NavLink to="/login"><Button color="danger">Login</Button></NavLink>
-      </div>
+    <ButtonGroup >
+    <div>
+      
+      
       <div className="btn float-right">
-        <NavLink to="/map"><Button color="danger">Map</Button></NavLink>
+        <NavLink to="/map"><Button color="blue">Map</Button></NavLink>
       </div>  
 
       <div className="btn  float-right">
-        <NavLink to="/styles"><Button color="danger">Styles</Button></NavLink>
+        <NavLink to="/styles"><Button color="blue">Styles</Button></NavLink>
       </div>
-      
+      <div className="btn  float-right">
+        <NavLink to="/"><Button color="blue" >Home</Button></NavLink>
+      </div>
     </div>
-
+    </ButtonGroup>
+    </div>
   );
 };
 

@@ -90,7 +90,7 @@ class Example extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} class="carousel-image-width" />
+          <img src={item.src} class="carousel" />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
