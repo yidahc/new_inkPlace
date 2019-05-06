@@ -15,6 +15,25 @@ exports.getStyles = (req, res) => {
     .catch(err => { console.log(err)})
 }
 
+module.exports.getDates = (request, response) => {
+  console.log("FROM ROUTES!");
+  db.getDays(data => {
+    response
+      .status(200)
+      .send(data)
+      .end()
+  })
+};
+
+exports.postDates = (request, response) => {
+  const { date } = request.body
+  db.postMyData(date, (res) => {
+    response
+      .status(200)
+      .send(res)
+      .end()
+  })
+};
 
 exports.imagesByStyle = (req, res) => {
   db.imagesByStyle()

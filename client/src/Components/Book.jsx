@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import axios from 'axios'
-import ReactCalendar from './ReactCalendar.jsx'
-import DatePicker from 'react-date-picker';
+import axios from 'axios';
+import $ from 'jquery';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 require("babel-polyfill");
 
 class Book extends Component{
@@ -16,12 +17,21 @@ class Book extends Component{
       message: '',
       dropdownOpen: false,
       date: new Date(),
+      datesToExclude: [new Date(2019, 4, 9)],
+     // new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)
       bodyPart: 'Body Part',
+      studio: 'Studio',
     }
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.getData = this.getData.bind(this);
+    this.addDays = this.addDays.bind(this);
+  }
+
+  componentDidMount () {
+      this.getData ("/days")
   }
   
   onChange = date => this.setState({ date })
@@ -32,15 +42,47 @@ class Book extends Component{
     }));
   }
 
+  getData(url) {
+    $.ajax({
+      url: url,
+      method: 'GET',
+      success: (results => {
+        let currentDays = this.state.datesToExclude;
+        currentDays.push(results)
+        this.setState({
+          datesToExclude: currentDays
+        });
+        console.log(results)
+      }),
+      error: (xhr, err) => {
+        console.log('err', err);
+      }
+    });
+  }
+  
+    addDays (url= '', data= {}) {
+    return fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+     // .then(() => this.componentDidMount())
+      .catch(err => console.error(err));
+  }
+  
+
+  
+
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value })
   }
     
   async handleSubmit(e) {
     e.preventDefault()
-
     const { name, email, message, date, bodyPart } = this.state
-
+    addDays(date);
     const from = await axios.post('/api/form', {
       name,
       date: date.toDateString(),
@@ -48,14 +90,35 @@ class Book extends Component{
       bodyPart,
       message
     })
-}
+    
+    
+  }
   render(){
     return(
       <Form onSubmit={this.handleSubmit} style={{ width: '600px'}}>
-        <DatePicker
-          onChange={this.onChange}
-          value={this.state.date}
-        />
+         <DatePicker 
+            placeholderText="Click to select a date" 
+            onChange={this.onChange}
+            selected={this.state.date}
+            excludeDates={this.state.datesToExclude}
+            dateFormat="MMMM d, yyyy"
+            withPortal
+         >
+          <div style={{color: 'green'}}>
+            <center>InkMe.co</center>
+          </div>
+        </DatePicker>
+        <select
+        name="studio"
+        value={this.state.studio}
+        onChange={this.handleChange}
+        >
+          <option value="Studio">Studio</option>
+          <option value="studio onix">studio onix</option>
+          <option value="north tattoo">north tattoo</option>
+          <option value="daggamx">daggamx</option>
+          <option value="nauyaca_mx">nauyaca_mx</option>
+        </select>
         <FormGroup>
           <Label for='name'>Name:</Label>
           <Input

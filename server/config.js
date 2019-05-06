@@ -32,6 +32,10 @@ app.get("/home-images", route.imagesByStyle)
 
 app.post("/book", route.getApp)
 
+app.get("/days", route.getDates)
+
+app.post("/dates", route.postDates)
+
 app.post('/api/form', (req, res) => {
   nodemailer.createTestAccount((err, account) => {
     const htmlEmail = `

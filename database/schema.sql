@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS inkPlace;
+DROP DATABASE IF EXISTS inkMe;
 
-CREATE DATABASE inkPlace;
+CREATE DATABASE inkMe;
 
-USE inkPlace;
+USE inkMe;
 
 CREATE TABLE styles (
   id int NOT NULL AUTO_INCREMENT,
@@ -39,16 +39,26 @@ token varchar(500))
 ;
 
 CREATE TABLE appointments (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  clientName VARCHAR(20),
+  apptDate DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  email varchar(60),
+  bodyPart varchar(20),
+  studio VARCHAR(60)
+);
+
+/*
+CREATE TABLE appointments (
   id int NOT NULL AUTO_INCREMENT,
-  size varchar(60),
   bodyPart varchar(60),
-  apptDate DATETIME,
+  apptDate DATE,
   studio int,
   FOREIGN KEY (studio) REFERENCES studios(id),
   PRIMARY KEY (ID),
   name int,
   FOREIGN KEY (name) REFERENCES users(id)
 );
+*/
 
 
 INSERT INTO styles (style,info) VALUES ("Traditional","The traditional style is known for its bold lines, bright colors, and iconic designs like roses, anchors, and gorgeous lady heads. With heavy hitters in the history of Traditional like Sailor Jerry, Don Ed Hardy, Bert Grimm, and Lyle Tuttle, this style of tattooing is one of the most well-known and beloved aesthetics within the tattoo community. They're gorgeous from the get go, age beautifully, and are filled with the history of tattooing. You can't really go wrong with a piece in this genre!
@@ -107,3 +117,5 @@ INSERT INTO studios (name, address, styleID) VALUES ("north tattoo", "DIVISION D
 INSERT INTO studios (name, address, styleID) VALUES ("daggamx", "Orizaba 203 col. Roma, Mexico city", 3);
 
 INSERT INTO studios (name, address, styleID) VALUES ("nauyaca_mx", "Nauyaca, Avenida 5 de Mayo 29", 4);
+
+INSERT INTO appointments (clientName, email, bodyPart, studio) VALUES ("Yidah", "waitingoutthewinter22012@yahoo.com", "Lower Arm", "studio onix");
