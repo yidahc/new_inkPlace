@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import LoginBox from './LoginBox.jsx';
-import Register from './Register.jsx';
+
 import Example from './Carousel.jsx';
 
 class Home extends React.Component {
@@ -18,17 +17,8 @@ class Home extends React.Component {
     }
     render(){
         return (
-          <div className="root-container">
-          <div className="box-controller">
-          <div className="controller">
-            <LoginBox/>
-          </div>
-          <div className="controller">
-            <Register />
-          </div>
-          </div>
-          <div className="box-container">
-          </div>
+
+          <div>
           <Example />
           </div>
         )}
