@@ -10,14 +10,12 @@ import Book from './Components/Book.jsx'
 import Navigation from './Components/Navigation.jsx'
 import axios from 'axios';
 import MapContainer from './Components/MapContainer.jsx'
+import Login from './Components/Login.jsx'
+
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoginOpen: true,
-      isRegisterOpen: false
-    };
   }
 
   render() {
@@ -32,7 +30,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/map" component={MapContainer }></Route>
-              <Route path="/login" ></Route>          
+              <Route path="/login"  component={Login} ></Route>          
             </Switch>
         </div>
         
