@@ -17,7 +17,7 @@ import React, {Component} from 'react';
       return(
         <div className="inner-container">
          <div className="header">
-        Login
+      
         </div>
         <div className="box">
         <div className="input-group">
