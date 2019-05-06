@@ -25,7 +25,16 @@ const getStyles = cb => {
 };
 
 
-
+const getDates = cb => {
+    connection.query("SELECT apptDate FROM appointments", (error, results) => {
+      if (error) {
+        throw error;
+      } else {
+        console.log(results)
+        cb(results);
+      }
+    });
+  };
 
 
 const imagesByStyle = cb => {
@@ -68,5 +77,6 @@ module.exports = {
 getStyles,
 imagesByStyle ,
 getUser,
+getDates,
 getApp
 };

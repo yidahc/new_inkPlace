@@ -16,7 +16,8 @@ class Book extends Component{
       message: '',
       dropdownOpen: false,
       date: new Date(),
-      datesToExclude: [new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)],
+      datesToExclude: [],
+     // new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)
       bodyPart: 'Body Part',
       studio: 'Studio',
     }
@@ -25,6 +26,11 @@ class Book extends Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.getDays = this.getDays.bind(this);
+    this.addDays = this.addDays.bind(this);
+  }
+
+  componentDidMount () {
+      this.getDays()
   }
   
   onChange = date => this.setState({ date })
@@ -35,20 +41,22 @@ class Book extends Component{
     }));
   }
 
-  getDays (url= '') {
-    return fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        let currentDays = this.state.datesToExclude;
-        currentDays.push(data)
-        this.setState({
-          datesToExclude: currentDays
-        });
-        console.log(this.state.datesToExclude)
-      })
-      .catch(err => console.error(err));
+  getDays() {
+    axios.get('/days')
+    .then(res => {
+      console.log(res.data, "RES.DATA in axios get request");
+      let currentDays = this.state.datesToExclude;
+      currentDays.push(res.data)
+      this.setState({
+        datesToExclude: currentDays
+      });
+    })
+    .catch(err => {
+      console.log("this is my err:", err);
+    });
   }
-  /*
+
+  
     addDays (url= '', data= {}) {
     return fetch(url, {
       method: 'POST',
@@ -60,7 +68,8 @@ class Book extends Component{
      // .then(() => this.componentDidMount())
       .catch(err => console.error(err));
   }
-  */
+  
+
   
 
   handleChange = e => {
