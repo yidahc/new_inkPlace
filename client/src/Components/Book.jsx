@@ -17,8 +17,7 @@ class Book extends Component{
       message: '',
       dropdownOpen: false,
       date: new Date(),
-      datesToExclude: [new Date(2019, 4, 9)],
-     // new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)
+      datesToExclude: [new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12), new Date(2019, 4, 16), new Date(2019, 4, 30), new Date(2019, 4, 26)],
       bodyPart: 'Body Part',
       studio: 'Studio',
     }
@@ -26,14 +25,15 @@ class Book extends Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.getData = this.getData.bind(this);
     this.addDays = this.addDays.bind(this);
   }
 
+ /*
   componentDidMount () {
       this.getData ("/days")
   }
-  
+ */
+
   onChange = date => this.setState({ date })
 
   toggle() {
@@ -42,38 +42,15 @@ class Book extends Component{
     }));
   }
 
-  getData(url) {
-    $.ajax({
-      url: url,
-      method: 'GET',
-      success: (results => {
-        let currentDays = this.state.datesToExclude;
-        currentDays.push(results)
-        this.setState({
-          datesToExclude: currentDays
-        });
-        console.log(results)
-      }),
-      error: (xhr, err) => {
-        console.log('err', err);
-      }
-    });
-  }
-  
-    addDays (url= '', data= {}) {
-    return fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+  addDays () {
+    let { date, datesToExclude } = this.state
+    let currentDays = datesToExclude;
+    currentDays.push(date);
+    this.setState({
+      datesToExclude: currentDays
     })
-     // .then(() => this.componentDidMount())
-      .catch(err => console.error(err));
   }
-  
 
-  
 
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value })
@@ -81,17 +58,16 @@ class Book extends Component{
     
   async handleSubmit(e) {
     e.preventDefault()
+    this.addDays();
+    alert("Confirmation email has been sent")
     const { name, email, message, date, bodyPart } = this.state
-    addDays(date);
     const from = await axios.post('/api/form', {
       name,
       date: date.toDateString(),
       email,
       bodyPart,
       message
-    })
-    
-    
+    });    
   }
   render(){
     return(
