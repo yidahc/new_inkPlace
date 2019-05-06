@@ -16,8 +16,9 @@ class Book extends Component{
       message: '',
       dropdownOpen: false,
       date: new Date(),
-      datesToInclude: [new Date(), new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)],
+      datesToExclude: [new Date(2019, 4, 8), new Date(2019, 4, 9), new Date(2019, 4, 12)],
       bodyPart: 'Body Part',
+      studio: 'Studio',
     }
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -32,6 +33,32 @@ class Book extends Component{
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
+
+  getDays (url= '') {
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          totals: data,
+        });
+        console.log(data)
+      })
+      .catch(err => console.error(err));
+  }
+  
+    removeDays (url= '', data= {}) {
+    return fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(() => this.componentDidMount())
+      .catch(err => console.error(err));
+  }
+  
+  
 
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value })
@@ -50,7 +77,7 @@ class Book extends Component{
       message
     })
     
-
+    
   }
   render(){
     return(
@@ -59,13 +86,25 @@ class Book extends Component{
             placeholderText="Click to select a date" 
             onChange={this.onChange}
             selected={this.state.date}
-            includeDates={this.state.datesToInclude}
+            excludeDates={this.state.datesToExclude}
             dateFormat="MMMM d, yyyy"
+            withPortal
          >
           <div style={{color: 'green'}}>
             <center>InkMe.co</center>
           </div>
         </DatePicker>
+        <select
+        name="studio"
+        value={this.state.studio}
+        onChange={this.handleChange}
+        >
+          <option value="Studio">Studio</option>
+          <option value="studio onix">studio onix</option>
+          <option value="north tattoo">north tattoo</option>
+          <option value="daggamx">daggamx</option>
+          <option value="nauyaca_mx">nauyaca_mx</option>
+        </select>
         <FormGroup>
           <Label for='name'>Name:</Label>
           <Input
