@@ -24,6 +24,7 @@ class Book extends Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.getDays = this.getDays.bind(this);
   }
   
   onChange = date => this.setState({ date })
@@ -38,15 +39,17 @@ class Book extends Component{
     return fetch(url)
       .then(response => response.json())
       .then(data => {
+        let currentDays = this.state.datesToExclude;
+        currentDays.push(data)
         this.setState({
-          totals: data,
+          datesToExclude: currentDays
         });
-        console.log(data)
+        console.log(this.state.datesToExclude)
       })
       .catch(err => console.error(err));
   }
-  
-    removeDays (url= '', data= {}) {
+  /*
+    addDays (url= '', data= {}) {
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -54,10 +57,10 @@ class Book extends Component{
       },
       body: JSON.stringify(data),
     })
-      .then(() => this.componentDidMount())
+     // .then(() => this.componentDidMount())
       .catch(err => console.error(err));
   }
-  
+  */
   
 
   handleChange = e => {
@@ -66,9 +69,8 @@ class Book extends Component{
     
   async handleSubmit(e) {
     e.preventDefault()
-
     const { name, email, message, date, bodyPart } = this.state
-
+    addDays(date);
     const from = await axios.post('/api/form', {
       name,
       date: date.toDateString(),

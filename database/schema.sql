@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS inkPlace;
+DROP DATABASE IF EXISTS inkMe;
 
-CREATE DATABASE inkPlace;
+CREATE DATABASE inkMe;
 
-USE inkPlace;
+USE inkMe;
 
 CREATE TABLE styles (
   id int NOT NULL AUTO_INCREMENT,
@@ -39,16 +39,26 @@ token varchar(500))
 ;
 
 CREATE TABLE appointments (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  clientName VARCHAR(20),
+  apptDate DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  email varchar(60),
+  bodyPart varchar(20),
+  studio VARCHAR(60)
+);
+
+/*
+CREATE TABLE appointments (
   id int NOT NULL AUTO_INCREMENT,
-  size varchar(60),
   bodyPart varchar(60),
-  apptDate DATETIME,
+  apptDate DATE,
   studio int,
   FOREIGN KEY (studio) REFERENCES studios(id),
   PRIMARY KEY (ID),
   name int,
   FOREIGN KEY (name) REFERENCES users(id)
 );
+*/
 
 
 INSERT INTO styles (style,info) VALUES ("Old School","Old School style Tattoos (and Old Skool) become popular in 1920's. The main characteristics of the old school design are large anJapanese tattoos have an ancient tradition, but their connotation has almost always been associated with the criminal world. They were in fact used to mark criminals for life. The famous Yakuza drew from the tradition of tattoo making a real signature, so that even today, many public places prohibit the entry of tattooed people. Only a few years ago that the traditional Japanese tattoo (irezumi) found its definitive consecration breaking through the boundaries of the country and flooding around the world.
@@ -92,3 +102,5 @@ INSERT INTO studios (name, address, styleID) VALUES ("north tattoo", "DIVISION D
 INSERT INTO studios (name, address, styleID) VALUES ("daggamx", "Orizaba 203 col. Roma, Mexico city", 3);
 
 INSERT INTO studios (name, address, styleID) VALUES ("nauyaca_mx", "Nauyaca, Avenida 5 de Mayo 29", 4);
+
+INSERT INTO appointments (clientName, email, bodyPart, studio) VALUES ("Yidah", "waitingoutthewinter22012@yahoo.com", "Lower Arm", "studio onix");
