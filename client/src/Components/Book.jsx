@@ -59,7 +59,7 @@ class Book extends Component{
   async handleSubmit(e) {
     e.preventDefault()
     this.addDays();
-    alert("Confirmation email has been sent")
+    alert("Confirmation email has been sent");
     const { name, email, message, date, bodyPart } = this.state
     const from = await axios.post('/api/form', {
       name,
