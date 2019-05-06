@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
+import './home.css'
 import Example from './Carousel.jsx';
-
 class Home extends React.Component {
 
     constructor(props){
@@ -17,8 +16,8 @@ class Home extends React.Component {
     }
     render(){
         return (
-
-          <div>
+            
+          <div className='root-container'>
           <Example />
           </div>
         )}
