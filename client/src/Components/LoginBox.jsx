@@ -21,7 +21,7 @@ import React, {Component} from 'react';
         </div>
         <div className="box">
         <div className="input-group">
-        <label htmlFor="userName"> username</label>
+        <label htmlFor="userName"> Username</label>
         <input type="text" 
         name="username" 
         className="login-input"
