@@ -30,7 +30,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route path="/map" component={MapContainer }></Route>
-              <Route path="/login"  component={Login} ></Route>          
+              <Route path="/login"  component={Login} ></Route>
+              <Route path ="/styles" /*component={}*/></Route>          
             </Switch>
         </div>
         
