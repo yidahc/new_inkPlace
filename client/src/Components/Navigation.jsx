@@ -14,7 +14,7 @@ const Navigation = () => {
       
       
       <div className="btn float-right">
-        <NavLink to="/map"><Button color="blue">Map</Button></NavLink>
+        <NavLink to="/booking"><Button color="blue">Book an Appointment</Button></NavLink>
       </div>  
 
       <div className="btn  float-right">
