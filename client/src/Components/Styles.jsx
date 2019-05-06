@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import Example2 from './Carousel2.jsx';
 
 
 class Styles extends React.Component {
@@ -32,7 +31,7 @@ class Styles extends React.Component {
            <option value="text4">Chicano Style</option>
 
           </select>
-
+           <Example2 />
         </div>
         )}
     }
