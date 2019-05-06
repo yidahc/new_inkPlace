@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import './carousel.css'
 import '../App.css';
 import Image1 from '../../dist/images/slide1.jpg';
 import Image2 from '../../dist/images/slide2.jpg';
@@ -90,16 +90,19 @@ class Example extends Component {
           key={item.src}
         >
           <img src={item.src} />
+          className='carousel-item'
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
     });
 
     return (
+      
       <div className='parentComponent'>
       <div className='Title' >
         <p>
-        <a>Ink Me</a>  
+        <a>Ink Me</a>
+        <h6>Your place to find a tattoo shop with your style</h6>  
         </p>    
       </div> 
       <div>
