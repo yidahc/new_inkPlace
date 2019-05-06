@@ -32,9 +32,6 @@ app.get("/home-images", route.imagesByStyle)
 
 app.post("/book", route.getApp)
 
-<<<<<<< HEAD
-app.post('/api/form',email.sendMail)
-=======
 app.post('/api/form', (req, res) => {
   nodemailer.createTestAccount((err, account) => {
     const htmlEmail = `
@@ -77,6 +74,5 @@ app.post('/api/form', (req, res) => {
     })
   })
 })
->>>>>>> d22b7c28b5f8436001d5401cc6c8418fbe1d2eef
 
 module.exports = app;
