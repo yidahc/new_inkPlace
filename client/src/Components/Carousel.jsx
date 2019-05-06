@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import '../App.css';
 import Image1 from '../../dist/images/slide1.jpg';
 import Image2 from '../../dist/images/slide2.jpg';
 import Image3 from '../../dist/images/slide3.jpg';
@@ -95,16 +96,27 @@ class Example extends Component {
     });
 
     return (
+      <div className='parentComponent'>
+      <div className='Title' >
+        <p>
+        <a>Ink Me</a>  
+        </p>    
+      </div> 
+      <div>
       <Carousel
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+      
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
       </Carousel>
+      </div>
+      </div>
+        
     );
   }
 }
