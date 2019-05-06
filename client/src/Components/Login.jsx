@@ -26,10 +26,13 @@ class Login extends React.Component {
     return (
       <div>
       <div className="root-container">
-      <div className="controller" onClick={this.showLoginBox.bind(this)} >
+      <div className="box-controller">
+      <div className={"controller " + (this.state.isLoginOpen ? "selected-controller": "")}
+      onClick={this.showLoginBox.bind(this)} >
       Login
       </div>
-      <div className="controller" onClick={this.showRegisterBox.bind(this)}>
+      </div>
+      <div className={"controller " + (this.state.isRegisterOpen ? "selected-controller": "")} onClick={this.showRegisterBox.bind(this)}>
       Register
       </div>
       </div>
