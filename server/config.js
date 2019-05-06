@@ -6,6 +6,7 @@ const db = require('../database/mysql.js')
 const app = express();
 const nodemailer = require('nodemailer')
 const path = require('path')
+const email = require('../server/email.js')
 
 //middleware
 app.use(compression());
