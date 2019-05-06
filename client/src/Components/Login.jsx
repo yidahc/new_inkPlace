@@ -31,14 +31,16 @@ class Login extends React.Component {
       onClick={this.showLoginBox.bind(this)} >
       Login
       </div>
-      </div>
-      <div className={"controller " + (this.state.isRegisterOpen ? "selected-controller": "")} onClick={this.showRegisterBox.bind(this)}>
+      <div className={"controller " + (this.state.isRegisterOpen ? "selected-controller": "")} 
+      onClick={this.showRegisterBox.bind(this)}>
       Register
       </div>
       </div>
+      
       <div className="box-container">
         {this.state.isLoginOpen && <LoginBox/>}
         {this.state.isRegisterOpen && <RegisterBox/>}
+        </div>
         </div>
         </div>
     );
