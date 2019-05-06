@@ -59,7 +59,3 @@ exports.getApp = (req, res) => {
     })
     .catch(err => { console.log(err)})
 }
-
-
-
-

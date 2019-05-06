@@ -39,3 +39,4 @@ module.exports.email = (req, res) => {
       console.log('Message URL: %s', nodemailer.getTestMessageUrl(info))
     })
   })
+}
