@@ -36,6 +36,6 @@ app.get("/days", route.getDates)
 
 app.post("/dates", route.postDates)
 
-app.post('/api/form', email)
+app.post('/api/form', email.email)
 
 module.exports = app;
