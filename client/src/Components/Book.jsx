@@ -58,6 +58,7 @@ class Book extends Component{
         console.log('err', err);
       }
     });
+  }
     /*
   }
 
